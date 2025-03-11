@@ -15,14 +15,14 @@ public class CompletedTask : TaskState
     public Comment Result { get; set; }
     public override StartedTask Start(User user)
     {
-        throw new NotImplementedException();
+        throw new InvalidOperationException("Операция не доступна");
     }
     public override CompletedTask Complete(User user, Comment result)
     {
-        throw new NotImplementedException();
+        return this;
     }
     public override ExpiredTask Expire()
     {
-        throw new NotImplementedException();
+        throw new InvalidOperationException("Операция не доступна");
     }
 }

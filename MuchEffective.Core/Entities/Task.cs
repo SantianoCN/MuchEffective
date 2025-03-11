@@ -7,7 +7,7 @@ public class Task {
         State = state;
     }
     public TaskState State { get; set; }
-    public StartedTask Start() => State.Start();
-    public CompletedTask Complete() => State.Complete();
+    public StartedTask Start(User user) => State.Start(user);
+    public CompletedTask Complete(User user, Comment result) => State.Complete(user, result);
     public ExpiredTask Expire() => State.Expire();
 }

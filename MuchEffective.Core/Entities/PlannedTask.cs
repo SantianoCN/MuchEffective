@@ -13,10 +13,10 @@ public class PlannedTask : TaskState
     }
     public override CompletedTask Complete(User user, Comment result)
     {
-        return new InvalidOperationException();
+        throw new InvalidOperationException("Операция не доступна");
     }
     public override ExpiredTask Expire()
     {
-        throw new NotImplementedException();
+        throw new InvalidOperationException("Операция не доступна");
     }
 }

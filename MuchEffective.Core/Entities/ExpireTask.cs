@@ -1,22 +1,26 @@
-
-using MuchEffective.Core.Contracts;
+using MuchEffective.Core.Exceptions;
 
 namespace MuchEffective.Core.Entities;
 
 public class ExpiredTask : TaskState
 {
+     public ExpiredTask(string name, string description, DateTime deadline, ICollection<Comment> comments,
+        User executor, User employer, DateTime startDate) : base(name, description, deadline, comments, executor, employer) { }
     public TimeSpan Timeout { get; set; }
     public bool IsCompleted { get; set; }
-    protected override StartedTask Start()
+    public override StartedTask Start(User user)
     {
-        throw new NotImplementedException();
+        throw new InvalidOperationException("Операция не доступна");
     }
-    protected override CompletedTask Complete()
+    public override CompletedTask Complete(User user, Comment result)
     {
-        throw new NotImplementedException();
+        if (user == Executor) {
+            IsCompleted = true;
+            return new CompletedTask(Name, Description, Deadline, Comments, Executor, Employer, DateTime.Now, result);
+        } else throw new PermissionException("Не прав для выполненияя этой операции");
     }
-    protected override ExpiredTask Expire()
+    public override ExpiredTask Expire()
     {
-        throw new NotImplementedException();
+        return this;
     }
 }

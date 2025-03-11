@@ -1,6 +1,5 @@
-using MuchEffective.Core.Entities;
 
-namespace MuchEffective.Core.Contracts;
+namespace MuchEffective.Core.Entities;
 
 public abstract class TaskState {
     public TaskState(string name, string description, DateTime deadline, ICollection<Comment> comments,
@@ -19,6 +18,6 @@ public abstract class TaskState {
     public User Executor { get; set; }
     public User Employer { get; set; }
     public abstract StartedTask Start(User user);
-    public abstract CompletedTask Complete(User user);
+    public abstract CompletedTask Complete(User user, Comment result);
     public abstract ExpiredTask Expire();
 }
