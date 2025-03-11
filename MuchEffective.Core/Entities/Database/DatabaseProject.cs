@@ -1,5 +1,5 @@
 
-namespace MuchEffective.Core.Entities;
+namespace MuchEffective.Core.Entities.Database;
 
 public class DatabaseProject {
     public long Id { get; set; }

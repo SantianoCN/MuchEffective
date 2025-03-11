@@ -30,8 +30,8 @@ public class DatabaseTask {
                         .ToList(), Executor.ToDomainUser(), Employer.ToDomainUser());
             case TaskStates.Started:
                 return new StartedTask(Name, Description, Deadline, Comments
-                    .Select(comm => comm.ToDomainComment()).
-                        ToList(), Executor.ToDomainUser(), Employer.ToDomainUser(), StartDate);
+                    .Select(comm => comm.ToDomainComment())
+                        .ToList(), Executor.ToDomainUser(), Employer.ToDomainUser(), StartDate);
             case TaskStates.Completed:
                 return new CompletedTask(Name, Description, Deadline, Comments
                     .Select(comm => comm.ToDomainComment())

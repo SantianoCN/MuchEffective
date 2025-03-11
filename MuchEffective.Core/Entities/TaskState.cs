@@ -1,7 +1,7 @@
 
 namespace MuchEffective.Core.Entities;
 
-public abstract class TaskState {
+public abstract class TaskState : Note {
     public TaskState(string name, string description, DateTime deadline, ICollection<Comment> comments,
         User executor, User employer) {
         Name = name;
@@ -11,8 +11,7 @@ public abstract class TaskState {
         Executor = executor;
         Employer = employer;
     }
-    public string Name { get; set; }
-    public string Description { get; set; }
+    public string Description { get => Text; set { Text = value; }}
     public DateTime Deadline { get; set; }
     public ICollection<Comment> Comments { get; set; }
     public User Executor { get; set; }
