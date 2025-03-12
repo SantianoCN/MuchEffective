@@ -8,6 +8,7 @@ public class ExpiredTask : TaskState
         User executor, User employer, DateTime startDate) : base(name, description, deadline, comments, executor, employer) { }
     public TimeSpan Timeout { get; set; }
     public bool IsCompleted { get; set; }
+    
     public override StartedTask Start(User user)
     {
         throw new InvalidOperationException("Операция не доступна");

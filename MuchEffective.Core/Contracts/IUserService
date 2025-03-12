@@ -1,0 +1,15 @@
+using MuchEffective.Core.Entities;
+
+namespace MuchEffective.Core.Contracts;
+
+public interface IUserService {
+    /// <summary>
+    /// Интерфейс сервиса для работы с пользователеми
+    /// </summary>
+    /// <param name="userId"></param>
+    /// <param name="userId1"></param>
+    /// <returns></returns>
+    Task<User> GetUser(string userId, string userId1);
+    Task InviteUserIntoProject(string userId, string userId1, string projectId);
+    Task ExcludeUserFromProject(string userId, string userId1, string projectId);
+}

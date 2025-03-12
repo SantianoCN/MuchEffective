@@ -13,6 +13,7 @@ public abstract class TaskState : Note {
     }
     public string Description { get => Text; set { Text = value; }}
     public DateTime Deadline { get; set; }
+    public DateTime UpdatedAt { get; set; }
     public ICollection<Comment> Comments { get; set; }
     public User Executor { get; set; }
     public User Employer { get; set; }
