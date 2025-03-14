@@ -2,6 +2,7 @@
 namespace MuchEffective.Core.Entities;
 
 public class Comment{
+    public Guid Guid { get; set; }
     public Comment(User user, DateTime date, string text, Entities.Task task = null){
         User = user;
         PublishDate = date;

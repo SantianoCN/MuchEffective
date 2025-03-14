@@ -4,11 +4,12 @@ namespace MuchEffective.Core.Entities;
 
 public class ExpiredTask : TaskState
 {
-     public ExpiredTask(string name, string description, DateTime deadline, ICollection<Comment> comments,
+    public Guid Guid { get; set; }
+    public ExpiredTask(string name, string description, DateTime deadline, ICollection<Comment> comments,
         User executor, User employer, DateTime startDate) : base(name, description, deadline, comments, executor, employer) { }
+    public DateTime StartDate { get; set; }
     public TimeSpan Timeout { get; set; }
     public bool IsCompleted { get; set; }
-    
     public override StartedTask Start(User user)
     {
         throw new InvalidOperationException("Операция не доступна");

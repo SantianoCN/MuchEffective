@@ -13,11 +13,11 @@ public interface ITaskService {
     /// <param name="noteId">Уникальный идентификатор заметки</param>
     /// 
     /// <returns>Возвращает объект DTO или словарь, где ключ: uuid, значение: имя пользователя или название задачи/заметки/проекта</returns>
-    Task<IDictionary<string, string>> GetClientNotesList(string userId);
-    Task<Entities.Note> GetNote(string userId, string noteId);
-    Task<IDictionary<string, string>> GetClientTasksList(string userId);
-    Task<Entities.Task> GetTask(string userId, string taskId);
-    System.Threading.Tasks.Task CreateTask(string userId, string taskId, Entities.Task task);
-    System.Threading.Tasks.Task UpdateTask(string userId, string taskId, Entities.Task task);
-    System.Threading.Tasks.Task DeleteTask(string userId, string taskId);
+    Task<IDictionary<Guid, Guid>> GetClientNotesList(Guid userId);
+    Task<Entities.Note> GetNote(Guid userId, Guid noteId);
+    Task<IDictionary<Guid, Guid>> GetClientTasksList(Guid userId);
+    Task<Entities.Task> GetTask(Guid userId, Guid taskId);
+    System.Threading.Tasks.Task CreateTask(Guid userId, Guid taskId, Entities.Task task);
+    System.Threading.Tasks.Task UpdateTask(Guid userId, Guid taskId, Entities.Task task);
+    System.Threading.Tasks.Task DeleteTask(Guid userId, Guid taskId);
 }

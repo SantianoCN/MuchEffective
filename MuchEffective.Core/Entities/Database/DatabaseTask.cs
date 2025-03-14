@@ -7,6 +7,7 @@ public class DatabaseTask {
     public TaskStates State { get; set; }
     public string Name { get; set; }
     public string Description { get; set; }
+    public DateTime CreationDate { get; set; }
     public DateTime Deadline { get; set; }
     public long ExecutorId { get; set; }
     public DatabaseUser Executor { get; set; }

@@ -1,7 +1,7 @@
 
 namespace MuchEffective.Core.Entities.Database;
 
-public class Permission {
+public class DatabasePermission {
     public long Id { get; set; }
     public bool WatchProject { get; set; }
     public bool ChangeProject { get; set; }

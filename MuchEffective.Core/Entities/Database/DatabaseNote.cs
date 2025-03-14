@@ -1,8 +1,8 @@
 
-namespace MuchEffective.Core.Entities;
+namespace MuchEffective.Core.Entities.Database;
 
-public class Note {
-    public Guid Guid { get; set; }
+public class DatabaseNote {
+    public long Id { get; set; }
     public string Name { get; set; }
     public string Text { get; set; }
     public DateTime CreationDate { get; set; }

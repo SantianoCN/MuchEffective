@@ -9,7 +9,7 @@ public interface IUserService {
     /// <param name="userId"></param>
     /// <param name="userId1"></param>
     /// <returns></returns>
-    Task<User> GetUser(string userId, string userId1);
-    Task InviteUserIntoProject(string userId, string userId1, string projectId);
-    Task ExcludeUserFromProject(string userId, string userId1, string projectId);
+    Task<User> GetUser(string Guid, string Guid);
+    Task InviteUserIntoProject(string Guid, string Guid, string Guid);
+    Task ExcludeUserFromProject(string Guid, string Guid, string Guid);
 }

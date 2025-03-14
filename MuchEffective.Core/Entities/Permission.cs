@@ -2,6 +2,7 @@
 namespace MuchEffective.Core.Entities;
 
 public class Permission {
+    public Guid Guid { get; set; }
     public bool WatchProject { get; set; }
     public bool ChangeProject { get; set; }
     public bool InviteUsers { get; set; }
